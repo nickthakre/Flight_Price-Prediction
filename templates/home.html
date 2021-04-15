@@ -1,0 +1,423 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+
+
+    
+	
+	<!-- https://codepen.io/P1N2O/pen/pyBNzX -->
+	<style>
+	
+		body {
+			background: #222;
+			text-align: center;
+			padding: 3%;
+			}
+		h2 {
+			color: #ccc;
+			margin: 0;
+			font: .8em verdana;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+		}
+
+		/*
+		* Loading Dots
+		* Can we use pseudo elements here instead :after?
+		*/
+		.loading span {
+			display: inline-block;
+			vertical-align: middle;
+			width: .6em;
+			height: .6em;
+			margin: .19em;
+			background: #007DB6;
+			border-radius: .6em;
+			animation: loading 1s infinite alternate;
+			}
+
+		/*
+		* Dots Colors
+		* Smarter targeting vs nth-of-type?
+		*/
+		.loading span:nth-of-type(2) {
+			background: #008FB2;
+			animation-delay: 0.2s;
+		}
+		.loading span:nth-of-type(3) {
+			background: #009B9E;
+			animation-delay: 0.4s;
+		}
+		.loading span:nth-of-type(4) {
+			background: #00A77D;
+			animation-delay: 0.6s;
+		}
+		.loading span:nth-of-type(5) {
+			background: #00B247;
+			animation-delay: 0.8s;
+		}
+		.loading span:nth-of-type(6) {
+			background: #5AB027;
+			animation-delay: 1.0s;
+		}
+		.loading span:nth-of-type(7) {
+			background: #A0B61E;
+			animation-delay: 1.2s;
+		}
+
+		/*
+		* Animation keyframes
+		* Use transition opacity instead of keyframes?
+		*/
+		@keyframes loading {
+			0% {
+				opacity: 0;
+				}
+			100% {
+				opacity: 1;
+				}
+			}
+		
+		html, body {
+			height: 100%;
+		}
+
+		.wrap {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.predict {
+			min-width: 300px;
+			min-height: 60px;
+			font-family: 'Nunito', sans-serif;
+			font-size: 22px;
+			text-transform: uppercase;
+			letter-spacing: 1.3px;
+			font-weight: 700;
+			color: #313133;
+			background: #4FD1C5;
+			background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+			border: none;
+			border-radius: 1000px;
+			box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+			transition: all 0.3s ease-in-out 0s;
+			cursor: pointer;
+			outline: none;
+			position: relative;
+			padding: 10px;
+		}
+
+		predict::before {
+			content: '';
+			border-radius: 1000px;
+			min-width: calc(300px + 12px);
+			min-height: calc(60px + 12px);
+			border: 6px solid #00FFCB;
+			box-shadow: 0 0 60px rgba(0,255,203,.64);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: all .3s ease-in-out 0s;
+		}
+
+		.predict:hover, .predict:focus {
+			color: #313133;
+			transform: translateY(-6px);
+		}
+
+		predict:hover::before, predict:focus::before {
+			opacity: 1;
+		}
+
+		predict::after {
+			content: '';
+			width: 30px; height: 30px;
+			border-radius: 100%;
+			border: 6px solid #00FFCB;
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			animation: ring 1.5s infinite;
+		}
+
+		predict:hover::after, predict:focus::after {
+			animation: none;
+			display: none;
+		}
+
+		@keyframes ring {
+			0% {		
+				width: 30px;
+				height: 30px;
+				opacity: 1;
+				}
+			100% {
+				width: 300px;
+				height: 300px;
+				opacity: 0;
+				}
+			}
+		
+		
+		body {
+			background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+			background-size: 200% 400%;
+			animation: gradient 15s ease infinite;
+			}
+
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+				}
+			50% {
+				background-position: 100% 50%;
+				}
+			100% {
+				background-position: 0% 50%;
+				}
+			}	
+			
+			
+	
+		.card-body{
+				width: 560px;
+				padding: 30px;
+				background: #778899;
+				text-align: center;
+				margin: 0 auto;
+				border: 2px solid #f97200;
+				color: #fff;
+				}
+				
+		h1{
+			margin: 20px;
+			padding: 1px
+			
+		}
+		
+		input {
+				width:400px;
+				height:50px;
+				}
+				
+		select {
+				width:400px;
+				height:50px;
+				}
+				
+		select:invalid {
+						color: gray;
+					   }
+				option {
+						color: black;
+					   }	
+			
+	</style>
+	
+	
+	<script>
+		var city_names = 
+		{
+			"Delhi": {"Cochin":"Cochin","Hyderabad":"Hyderabad","Kolkata":"Kolkata"},
+			"Kolkata": {"Cochin":"Cochin","Delhi":"Delhi","New Delhi":"New Delhi","Hyderabad":"Hyderabad"},
+			"Mumbai": {"Delhi":"Delhi","New Delhi":"New Delhi","Hyderabad":"Hyderabad","Kolkata":"Kolkata"},
+			"Chennai": {"Delhi":"Delhi","New Delhi":"New Delhi","Hyderabad":"Hyderabad","Kolkata":"Kolkata"}
+		}
+		window.onload = function() 
+		{
+			var subjectSel = document.getElementById("Source");
+			var topicSel = document.getElementById("Destination");
+			
+			for (var x in city_names) 
+			{
+				subjectSel.options[subjectSel.options.length] = new Option(x, x);
+			}
+			subjectSel.onchange = function() 
+			{
+				//empty Chapters- and Topics- dropdowns
+				topicSel.length = 1;
+				//display correct values
+				for (var y in city_names[this.value]) 
+				{
+					topicSel.options[topicSel.options.length] = new Option(y, y);
+				}
+			}
+		}
+		
+		function showMessage(){
+            var message = document.getElementById("sub").value;
+            display_message.innerHTML= message;
+        }
+		
+	</script>
+	
+	
+	
+			
+
+
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    
+    <div class="container-fluid">
+        <div class="navbar-header">
+           <a class="navbar-brand" href="/"><h1>FLIGHT PRICE Prediction</h1></a>
+        </div>
+    </div>
+    
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="POST">
+
+	
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Departure Date</h1>
+                            <!-- Departure -->
+                            <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+				
+				
+                
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Arrival Date</h1>
+                            <!-- Arrival -->
+                            <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h1 class="card-title">Source</h1>
+                            <select class='select' name="Source" id="Source" required="required">
+                                <option value="" selected="selected">Please select Source</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+				
+				<br>
+			
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Destination</h1>
+                            <!-- Destination -->
+                            <select class='select' name="Destination" id="Destination" required="required">
+                                <option value="" selected="selected">Please select Destination</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Stopage</h1>
+                            <!-- Total Stops -->
+                            <select name="stops" required="required">
+                                <option value="0">Non-Stop</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+				
+				<br>
+				
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Which Airline you want to travel?</h1>
+                            <!-- Airline -->
+                            <select name="airline" id="airline" required="required">
+                                <option value="Jet Airways">Jet Airways</option>
+                                <option value="IndiGo">IndiGo</option>
+                                <option value="Air India">Air India</option>
+                                <option value="Multiple carriers">Multiple carriers</option>
+                                <option value="SpiceJet">SpiceJet</option>
+                                <option value="Vistara">Vistara</option>
+                                <option value="Air Asia">Air Asia</option>
+                                <option value="GoAir">GoAir</option>
+                                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
+                                </option>
+                                <option value="Jet Airways Business">Jet Airways Business</option>
+                                <option value="Vistara Premium economy">Vistara Premium economy</option>
+                                <option value="Trujet">Trujet</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <br>
+            <!-- Submit -->
+			
+			 <br><br><button id="sub" type="submit " class='predict'>Predict Flight Price</button>
+			 
+        </form>
+
+		<h3>{{ prediction_text }}</h3>
+
+        
+
+    </div>
+	<br><br><br>
+
+
+
+
+    
+
+</body>
+
+</html>
