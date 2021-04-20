@@ -25,22 +25,31 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 
 ### ALL Source
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8f3e7372bdaf2405192d138b0eb128caadf638c2/Plots/Source%20count%20plot.png" />
+
 ### ALL Destinations
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Destination%20count%20plot.png" />
+
 ### ALL Routes
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Route%20count%20plot.png" />
+
 ### ALL Total_stops
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Total_stop%20count%20plot.png" />
+
 ### Price Over days in Months
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/day_price%20line%20plot.png" />
+
 ### Dep_Houre
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Dep_houre%20lineplot.png" />
+<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Dep_houre%20lineplot.png"/>
+
 ### Arrivel Houre
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Arrivel_houre%20lineplot.png" />
+
 ### Duration Hours Count
 <img src=" " />
+
 ### Duration Hours
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/duration_houre%20lineplot.png" />
+
 ### Heat Map
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/heatmap.png" />
 
