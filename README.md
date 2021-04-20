@@ -23,8 +23,7 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 ### All Airlines
 ![Image of Airlines](Plots/Airline.png)
 
-### All Source
-![Image of Source]
+
 
 Like this type of inputs or features we predict flight price.
 And Deploy it on severs.
