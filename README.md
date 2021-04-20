@@ -20,11 +20,29 @@ From above Features we Generate another featurs like,
 
 And Convert all Categorical Features into Numerical using One-Hot Encoding.
 
-All Airlines
-![Image of Airlines](Plots/Airline.png)
+### ALL Airlines
+<img src = " " />
 
-![Screenshot](Plots/Source count plot.png)
-
+### ALL Source
+<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8f3e7372bdaf2405192d138b0eb128caadf638c2/Plots/Source%20count%20plot.png" />
+### ALL Destinations
+<img src = " " />
+### ALL Routes
+<img src = " " />
+### ALL Total_stops
+<img src = " " />
+### Price Over days in Months
+<img src = " " />
+### Dep_Houre
+<img src = " " />
+### Arrivel Houre
+<img src = " " />
+### Duration Hours Count
+<img src = " " />
+### Duration Hours
+<img src = " " />
+### Heat Map
+<img src = " " />
 
 
 Like this type of inputs or features we predict flight price.
