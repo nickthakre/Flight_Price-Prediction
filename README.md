@@ -45,7 +45,7 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Arrivel_houre%20lineplot.png" />
 
 ### Duration Hours Count
-<img src=" " />
+<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/e7a83c65c3b8d82085e0fefb668ecd467ed73665/Plots/Duration_houre%20countplot.png" />
 
 ### Duration Hours
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/duration_houre%20lineplot.png" />
