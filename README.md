@@ -20,8 +20,10 @@ From above Features we Generate another featurs like,
 
 And Convert all Categorical Features into Numerical using One-Hot Encoding.
 
-### All Airlines
+All Airlines
 ![Image of Airlines](Plots/Airline.png)
+
+![Screenshot](Plots/Source count plot.png)
 
 
 
