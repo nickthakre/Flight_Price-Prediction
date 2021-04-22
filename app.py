@@ -7,7 +7,6 @@ Created on Wed Feb 10 22:11:15 2021
 from flask import Flask, request, render_template
 from flask_cors import cross_origin
 import pickle
-import sklearn
 import pandas as pd
 
 app = Flask(__name__)
