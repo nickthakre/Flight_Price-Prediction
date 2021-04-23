@@ -12,7 +12,7 @@ import pandas as pd
 app = Flask(__name__)
 model = pickle.load(open('flight_train_model.pkl','rb'))
 
-@app.route('/',methods=['POST'])
+@app.route('/',methods=['GET'])
 def Home():
     return render_template('home.html')
 
