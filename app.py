@@ -10,13 +10,11 @@ import pickle
 import pandas as pd
 
 app = Flask(__name__)
-model = pickle.load(open('flight_rf.pkl','rb'))
+model = pickle.load(open('flight_train_model.pkl','rb'))
 
-@app.route('/',methods=['GET'])
+@app.route('/',methods=['POST'])
 def Home():
     return render_template('home.html')
-
-
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -28,15 +26,13 @@ def predict():
         
         Dep_hour = int(pd.to_datetime(date_dep,format='%Y-%m-%dT%H:%M').hour)
         Dep_min = int(pd.to_datetime(date_dep,format='%Y-%m-%dT%H:%M').minute)         
-        
-        
+                
         # Arrival timing
         date_arr = request.form['Arrival_Time']
         
         Arrival_hour = int(pd.to_datetime(date_arr,format = '%Y-%m-%dT%H:%M').hour)
         Arrival_min = int(pd.to_datetime(date_arr,format = '%Y-%m-%dT%H:%M').minute)
-        
-        
+                
         # Total Duration
         dur_hour = abs(Arrival_hour - Dep_hour)
         dur_min = abs(Arrival_min - Dep_min)
@@ -279,8 +275,7 @@ def predict():
             d_New_Delhi = 0
             d_Hyderabad = 0
             d_Kolkata = 0
-            
-            
+
         prediction = model.predict([[Total_stops,Journey_day,Journey_month,Dep_hour,
                                      Dep_min,Arrival_hour,Arrival_min,dur_hour,dur_min,
                                      Air_India,GoAir,IndiGo,Jet_Airways,Jet_Airways_Business,
@@ -300,9 +295,8 @@ def predict():
     else:
         return render_template("home.html")
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
              
         
             
