@@ -1,5 +1,5 @@
 # Demo
-[Demo link](https://www.google.com)
+[Demo link](https://predict-flight-price-api.herokuapp.com/)
 
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/2a67ab4fac816bdedc7b5b38f7e1d7ecc51ea1c7/Plots/home.PNG" />
 
