@@ -1,0 +1,12 @@
+
+click 
+Flask 
+Flask-Cors 
+Jinja2 
+joblib 
+numpy 
+pandas 
+scikit-learn 
+scipy 
+gunicorn
+
