@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Price Prediction</title>
-
-
-    
+    <title>Flight Price Prediction</title>    
 	
-	<!-- https://codepen.io/P1N2O/pen/pyBNzX -->
-	<style>
-	
+	<style>	
 		body {
 			background: #222;
 			text-align: center;
@@ -24,10 +19,6 @@
 			letter-spacing: .1em;
 		}
 
-		/*
-		* Loading Dots
-		* Can we use pseudo elements here instead :after?
-		*/
 		.loading span {
 			display: inline-block;
 			vertical-align: middle;
@@ -39,10 +30,6 @@
 			animation: loading 1s infinite alternate;
 			}
 
-		/*
-		* Dots Colors
-		* Smarter targeting vs nth-of-type?
-		*/
 		.loading span:nth-of-type(2) {
 			background: #008FB2;
 			animation-delay: 0.2s;
@@ -68,10 +55,6 @@
 			animation-delay: 1.2s;
 		}
 
-		/*
-		* Animation keyframes
-		* Use transition opacity instead of keyframes?
-		*/
 		@keyframes loading {
 			0% {
 				opacity: 0;
@@ -167,8 +150,7 @@
 				opacity: 0;
 				}
 			}
-		
-		
+				
 		body {
 			background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 			background-size: 200% 400%;
@@ -187,8 +169,6 @@
 				}
 			}	
 			
-			
-	
 		.card-body{
 				width: 560px;
 				padding: 30px;
@@ -223,8 +203,7 @@
 					   }	
 			
 	</style>
-	
-	
+		
 	<script>
 		var city_names = 
 		{
@@ -261,36 +240,19 @@
 		
 	</script>
 	
-	
-	
-			
-
-
-
-
 </head>
 
 <body>
-
-    <!-- As a heading -->
-    
     <div class="container-fluid">
         <div class="navbar-header">
            <a class="navbar-brand" href="/"><h1>FLIGHT PRICE Prediction</h1></a>
         </div>
     </div>
-    
-
-    <br><br><br>
-
-
-    <div class="container">
-
-
-
-        <form action="\predict" method="POST">
-
 	
+    <br><br><br>
+	
+    <div class="container">
+        <form action="\predict" method="POST">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card">
@@ -301,10 +263,9 @@
                         </div>
                     </div>
                 </div>
-				
-				
-                
-                <br>
+		    
+		<br>
+		    
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
@@ -314,11 +275,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            
+            </div> 
+		
             <br>
-
+		
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card">
@@ -331,8 +291,8 @@
                         </div>
                     </div>
                 </div>
-				
-				<br>
+		
+		<br>
 			
                 <div class="col-sm-6">
                     <div class="card">
@@ -346,10 +306,7 @@
                     </div>
                 </div>
             </div>
-
-
-
-            
+	    
             <br>
 
             <div class="row">
@@ -369,7 +326,7 @@
                     </div>
                 </div>
 				
-				<br>
+		<br>
 				
                 <div class="col-sm-6">
                     <div class="card">
@@ -396,28 +353,17 @@
                 </div>
             </div>
 
-
-
-            
             <br>
             <!-- Submit -->
 			
-			 <br><br><button id="sub" type="submit " class='predict'>Predict Flight Price</button>
+	    <br><br><button id="sub" type="submit " class='predict'>Predict Flight Price</button>
 			 
         </form>
-
-		<h3>{{ prediction_text }}</h3>
-
-        
+	    
+	    <h3>{{ prediction_text }}</h3>
 
     </div>
 	<br><br><br>
 
-
-
-
-    
-
 </body>
-
 </html>
