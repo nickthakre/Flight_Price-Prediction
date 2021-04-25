@@ -10,10 +10,10 @@
 Here we Predict flight price base on following inputs or Features.<br>
 1. Where from user take a flight i.e Source of traval
 2. To Where he want to go ie. Destination of Traval.
-3. Day of Departure
-4. Day of Arrival
-5. Stopage i.e To traval from Source To Destination how many Stop user wants.
-6. Airline company. Ie Which Airline user want to travel.
+3. Day And Time of Departure
+4. Day And Time to Arrival
+5. Stopage i.e To traval from Source To Destination how many Stop user wants or that flight takes.
+6. Airline company. I.e From which Airline company user want to travel.
 
 From above Features we Generate another featurs like,
 1. Journey_day
