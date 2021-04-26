@@ -28,7 +28,7 @@ From above Features we Generate another featurs like,
 And Convert all Categorical Features into Numerical using One-Hot Encoding.
 
 ### ALL Airlines
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/fe3ee847e15209141d3b591f071259f570507caf/Plots/airline.png" />
+<img src="Plots/airline.png" />
 
 ### ALL Source
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/cdf27c46bee2fa43a1d6feafc2630944e6de5311/Plots/source.png" />
