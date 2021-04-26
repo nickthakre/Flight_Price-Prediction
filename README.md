@@ -37,7 +37,7 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 ### ALL Source
 <img src="Plots/source.png" />
 
-- There are total 5 Unique Source of travel. which is ['Banglore', 'Kolkata', 'Delhi', 'Chennai', 'Mumbai']
+> - There are total 5 Unique Source of travel. which is ['Banglore', 'Kolkata', 'Delhi', 'Chennai', 'Mumbai']
 - Most user travel from Delhi, Kolkata, Banglore.
 - And Delhi, Kolkata, Banglore Source have a high price as compare to others. 
 
