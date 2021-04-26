@@ -55,7 +55,7 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 <img src="Plots/duration_hours.png" />
 
 ### Duration Hours
-<img src="Plots/duration_houre_lineplot.png" />
+<img src="Plots/duration_hours_lineplot.png" />
 
 ### Heat Map
 <img src="Plots/heatmap.png" />
