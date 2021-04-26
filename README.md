@@ -43,19 +43,19 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 <img src="Plots/total_stop.png" />
 
 ### Price Over days in Months
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/day_price%20line%20plot.png" />
+<img src="Plots/journey_day.png" />
 
 ### Dep_Houre
-<img src="Plots/dep_hours.png"/>
+<img src="Plots/dep_hour.png"/>
 
 ### Arrivel Houre
 <img src="Plots/arrival_hour.png" />
 
 ### Duration Hours Count
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/e7a83c65c3b8d82085e0fefb668ecd467ed73665/Plots/Duration_houre%20countplot.png" />
+<img src="Plots/duration_hours.png" />
 
 ### Duration Hours
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/duration_houre%20lineplot.png" />
+<img src="Plots/duration_houre_lineplot.png" />
 
 ### Heat Map
 <img src="Plots/heatmap.png" />
