@@ -31,7 +31,7 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 <img src="Plots/airline.png" />
 
 ### ALL Source
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/cdf27c46bee2fa43a1d6feafc2630944e6de5311/Plots/source.png" />
+<img src="Plots/source.png" />
 
 ### ALL Destinations
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Destination%20count%20plot.png" />
