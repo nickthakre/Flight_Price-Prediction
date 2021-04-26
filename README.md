@@ -34,22 +34,22 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 <img src="Plots/source.png" />
 
 ### ALL Destinations
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Destination%20count%20plot.png" />
+<img src="Plots/destination.png" />
 
 ### ALL Routes
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Route%20count%20plot.png" />
+<img src="Plots/route.png" />
 
 ### ALL Total_stops
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Total_stop%20count%20plot.png" />
+<img src="Plots/total_stop.png" />
 
 ### Price Over days in Months
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/day_price%20line%20plot.png" />
 
 ### Dep_Houre
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Dep_houre%20lineplot.png"/>
+<img src="Plots/dep_hours.png"/>
 
 ### Arrivel Houre
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Arrivel_houre%20lineplot.png" />
+<img src="Plots/arrival_hour.png" />
 
 ### Duration Hours Count
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/e7a83c65c3b8d82085e0fefb668ecd467ed73665/Plots/Duration_houre%20countplot.png" />
@@ -58,10 +58,10 @@ And Convert all Categorical Features into Numerical using One-Hot Encoding.
 <img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/duration_houre%20lineplot.png" />
 
 ### Heat Map
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/heatmap.png" />
+<img src="Plots/heatmap.png" />
 
 ### Top 20 Features
-<img src="https://github.com/nickthakre/Flight_Price-Prediction/blob/8e00fdd784889ea90edb53c69358dd1204678040/Plots/Top%20features.png" />
+<img src="Plots/Top features.png" />
 
 
 Like this type of inputs or features we predict flight price.
